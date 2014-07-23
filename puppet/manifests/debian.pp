@@ -18,4 +18,4 @@ user { "vagrant":
   shell  => "/bin/bash"
 }
 
-include thmcards
+include thm
