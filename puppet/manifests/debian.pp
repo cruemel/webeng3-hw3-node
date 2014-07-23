@@ -18,4 +18,3 @@ user { "vagrant":
   shell  => "/bin/bash"
 }
 
-include thm
