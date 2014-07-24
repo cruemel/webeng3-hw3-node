@@ -2,11 +2,12 @@ class couchdb {
 
 	include git
 
-	$project_path = "/vagrant/thmcards"
+	$base = "/vagrant"
+	$repo = "https://github.com/thmcards/thmcards.git"
 
 	package {"python":
     	ensure => present,
-  	}
+	}
 
   	package { "couchdb":
   		ensure => "latest"
@@ -22,18 +23,27 @@ class couchdb {
     require => Package["couchdb"]
   }
 
-#git::repo { "thmcards":
- # 		path => $project_path,
-  #		source => "https://github.com/thmcards/thmcards.git",
-  	#	owner => "vagrant",
-  	#	group => "vagrant"
-  #}
+   conf { "couchdb-ini":
+    notify => Service["couchdb"],
+  }
 
-  #	exec { "initialize-couchdb":
-  #	cwd => $project_path,
-	#	command => "python createviews.py",
-   #	require => [ Package["python"], Git::Repo["thmcards"] ],
-   #	user => "vagrant"
-  #}
+	git::repo { "thmcards":
+ 		target => "/vagrant/thmcards",
+		source => 'https://github.com/thmcards/thmcards.git',
+		user => 'user',
+  }
+
+	# fix couchviews
+	file { "/vagrant/thmcards/couchviews/default_bagdges.design":
+		ensure => 'link',
+   	source => "/etc/puppet/files/thmcards/couchviews/default_bagdges.design",
+	}
+
+  exec { "create-couchviews":
+		command => "python /vagrant/thmcards/createviews.py",
+		path => "/usr/bin/:/usr/local/bin/",
+		require => [ Package["python"] ],
+		user => "vagrant"
+	}
 
 }
