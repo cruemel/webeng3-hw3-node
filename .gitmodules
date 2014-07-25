@@ -7,3 +7,12 @@
 [submodule "puppet/modules/git"]
 	path = puppet/modules/git
 	url = https://github.com/theforeman/puppet-git.git
+[submodule "puppet/modules/wget"]
+	path = puppet/modules/wget
+	url = https://github.com/maestrodev/puppet-wget
+[submodule "puppet/modules/nodejs"]
+	path = puppet/modules/nodejs
+	url = https://github.com/willdurand/puppet-nodejs
+[submodule "puppet/modules/motd"]
+	path = puppet/modules/motd
+	url = https://github.com/saz/puppet-motd.git

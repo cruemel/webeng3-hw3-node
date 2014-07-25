@@ -19,5 +19,5 @@ user { "vagrant":
   shell  => "/bin/bash"
 }
 
-include couchdb
-include nodejs
+include database
+include app
