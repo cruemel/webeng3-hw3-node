@@ -21,3 +21,4 @@ user { "vagrant":
 
 include database
 include app
+# include tests
