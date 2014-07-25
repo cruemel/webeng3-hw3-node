@@ -10,8 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-	config.vm.box = "fadenb/debian-wheezy-puppet3"
-  	config.vm.box_url = "https://vagrantcloud.com/fadenb/debian-wheezy-puppet3.box"
+	config.vm.box = "commana/arsnova-debian-wheezy-puppet3-i386"
+  	config.vm.box_url = "https://vagrantcloud.com/commana/arsnova-debian-wheezy-puppet3-i386"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

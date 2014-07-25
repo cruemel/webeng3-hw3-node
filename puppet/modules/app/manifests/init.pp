@@ -9,7 +9,7 @@ class app {
 
 	git::repo { "thmcards":
  		target => "/vagrant/thmcards/src",
-		source => 'https://github.com/cruemel/thmcards.git',
+		source => 'https://github.com/cruemel/thmcards-fork.git',
 		user => 'vagrant',
 		require => File["/vagrant/thmcards"]
   }
@@ -28,13 +28,13 @@ class app {
   		require => Nodejs::Install["nodejs-stable"]
 	}
 
-	exec { "install-npm":
-  		cwd => "/vagrant/thmcards/src",
-		command => "npm install",
-		path => "/usr/local/bin",
-		require => File["/usr/local/bin/npm"],
-		user => "vagrant"
-	}
+	#exec { "install-npm":
+  	#	cwd => "/vagrant/thmcards/src",
+	#	command => "npm install",
+	#	path => "/usr/local/bin",
+	#	require => File["/usr/local/bin/npm"],
+	#	user => "vagrant"
+	#}
 
   # file { "/home/vagrant/start.sh":
   #  owner => "vagrant",
