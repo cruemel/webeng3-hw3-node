@@ -28,14 +28,6 @@ class app {
   		require => Nodejs::Install["nodejs-stable"]
 	}
 
-	#exec { "install-npm":
-  	#	cwd => "/vagrant/thmcards/src",
-	#	command => "npm install",
-	#	path => "/usr/local/bin",
-	#	require => File["/usr/local/bin/npm"],
-	#	user => "vagrant"
-	#}
-
   # file { "/home/vagrant/start.sh":
   #  owner => "vagrant",
   #  group => "vagrant",

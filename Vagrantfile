@@ -37,8 +37,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.network "forwarded_port", guest: 5984, host: 5984
+	# node
+  	config.vm.network "forwarded_port", guest: 3000, host: 3000
+   # CouchDB
+   config.vm.network "forwarded_port", guest: 5984, host: 5984
+   # SonarQube
+   config.vm.network "forwarded_port", guest: 9000, host: 9000
+   # Jenkins
+   config.vm.network "forwarded_port", guest: 9090, host: 9090
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.

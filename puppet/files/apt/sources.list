@@ -1,7 +1,0 @@
-deb http://http.debian.net/debian wheezy main
-deb-src http://http.debian.net/debian wheezy main
-
-deb http://http.debian.net/debian wheezy-updates main
-deb-src http://http.debian.net/debian wheezy-updates main
-
-deb http://ftp.us.debian.org/debian wheezy-backports main

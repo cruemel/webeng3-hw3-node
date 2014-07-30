@@ -8,19 +8,14 @@ class tests {
         "AJP_PORT" => { "value" => "9009" }
       },
       plugin_hash => {
-        "git-client" => {},
-        "scm-api" => {},
-        "git" => {},
-        "clone-workspace-scm" => {},
-        "deploy" => {},
-        "disk-usage" => {},
-        "build-blocker-plugin" => {},
-        "log-parser" => {},
+      	"disk-usage" => {},
+      	"log-parser" => {},
+      	"dashboard-view" => {},
+      	 "jquery" => {},
+			"build-pipeline-plugin" => {},
+        "performance" => {},
         "sonar" => {},
-        "dashboard-view" => {},
-        "jquery" => {},
-        "parameterized-trigger" => {},
-        "build-pipeline-plugin" => {}
+        "deploy" => {},
       }
     }
 
