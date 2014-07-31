@@ -1,0 +1,95 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://thmcards.cloudcontrolled.com/login"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Was ist THMcards?"
+      }
+    },
+    {
+      "type": "waitForText",
+      "locator": {
+        "type": "css selector",
+        "value": "div.item.active > div.carousel-caption > h3"
+      },
+      "text": "Deine digitalen Lernkarten"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "span.glyphicon.glyphicon-chevron-right"
+      }
+    },
+    {
+      "type": "waitForText",
+      "locator": {
+        "type": "css selector",
+        "value": "div.item.active > div.carousel-caption > h3"
+      },
+      "text": "THMcards spricht TeX"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "span.glyphicon.glyphicon-chevron-right"
+      }
+    },
+    {
+      "type": "waitForText",
+      "locator": {
+        "type": "css selector",
+        "value": "div.item.active > div.carousel-caption > h3"
+      },
+      "text": "Hello World!"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "span.glyphicon.glyphicon-chevron-right"
+      }
+    },
+    {
+      "type": "waitForText",
+      "locator": {
+        "type": "css selector",
+        "value": "div.item.active > div.carousel-caption > h3"
+      },
+      "text": "Sammel Badges"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "button.close"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Wähle deinen Login:"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Impressum"
+      }
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
