@@ -34,9 +34,10 @@ class tests {
   }
 
   	$version = "1.1.3"
-  	$jmeter_dir = "/usr/share/jmeter"
   	$plugin = "JMeterPlugins-Standard"
-  	$plugin_dir = "${jmeter_dir}/lib/ext"
+  	$jmeter_dir = "/usr/share/jmeter"
+  	$lib_dir = "${jmeter_dir}/lib"
+  	$plugin_dir = "${lib_dir}/ext"
 
   	ensure_resource('file', 'install-dir', {
     ensure => 'directory',
@@ -51,6 +52,14 @@ class tests {
     destination => "${jmeter_dir}/${plugin}-${version}.zip",
     #notify => Exec["install-plugins"]
   }
+
+  ensure_resource('file', 'lib-dir', {
+    ensure  => 'directory',
+	path   => $lib_dir,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644'
+  })
 
   	ensure_resource('file', 'plugin-dir', {
     ensure  => 'directory',
