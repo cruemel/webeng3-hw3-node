@@ -1,12 +1,6 @@
 class tests {
 
-	package {"unzip":
-    	ensure => present,
-	}
-
-	class { 'sonarqube':
-		require => Package["unzip"]
-	}
+	class { 'sonarqube': }
 
 	class { "jenkins":
       config_hash => {
@@ -28,8 +22,49 @@ class tests {
       }
     }
 
-    class { 'jmeter':
-    	require => Package["unzip"]
+    package { "jmeter":
+  		ensure => "latest",
+  		require => Package["java"]
+  	}
+
+	if !defined(Package['unzip']) {
+    package {'unzip':
+      ensure => installed
     }
+  }
+
+  	$version = "1.1.3"
+  	$jmeter_dir = "/usr/share/jmeter"
+  	$plugin = "JMeterPlugins-Standard"
+  	$plugin_dir = "${jmeter_dir}/lib/ext"
+
+  	ensure_resource('file', 'install-dir', {
+    ensure => 'directory',
+    path   => $jmeter_dir,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644'
+  })
+
+    wget::fetch { "download-plugins":
+    source => "http://jmeter-plugins.org/downloads/file/${plugin}-${version}.zip",
+    destination => "${jmeter_dir}/${plugin}-${version}.zip",
+    #notify => Exec["install-plugins"]
+  }
+
+  	ensure_resource('file', 'plugin-dir', {
+    ensure  => 'directory',
+	path   => $plugin_dir,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644'
+  })
+
+   exec { 'install-plugins':
+  		cwd => $jmeter_dir,
+  		command => "sudo unzip -q -o ${plugin}-${version}.zip",
+		path => "/usr/bin",
+  		require => File["plugin-dir"]
+  }
 
 }
