@@ -25,3 +25,7 @@
 [submodule "puppet/modules/jenkins"]
 	path = puppet/modules/jenkins
 	url = https://github.com/jenkinsci/puppet-jenkins.git
+
+[submodule "puppet/modules/jmeter"]
+	path = puppet/modules/jmeter
+	url = https://github.com/dduvnjak/puppet-jmeter.git
