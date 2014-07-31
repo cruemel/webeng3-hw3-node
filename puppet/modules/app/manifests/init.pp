@@ -14,13 +14,13 @@ class app {
 		require => File["/vagrant/thmcards"]
   }
 
-  	exec { "create-couchviews":
-  		cwd => "/vagrant/thmcards/src",
-		command => "python createviews.py",
-		path => "/usr/bin",
-		require => [ Package["python"] ],
-		user => "vagrant"
-	}
+  #	exec { "create-couchviews":
+  #		cwd => "/vagrant/thmcards/src",
+	#	command => "python createviews.py",
+	#	path => "/usr/bin",
+	#	require => Package["python"],
+	#	user => "vagrant"
+	#}
 
 	file { "/usr/local/bin/npm":
   		ensure => link,

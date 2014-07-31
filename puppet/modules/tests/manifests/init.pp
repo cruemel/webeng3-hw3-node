@@ -1,6 +1,12 @@
 class tests {
 
-	class { 'sonarqube': }
+	package {"unzip":
+    	ensure => present,
+	}
+
+	class { 'sonarqube':
+		require => Package["unzip"]
+	}
 
 	class { "jenkins":
       config_hash => {
@@ -11,12 +17,19 @@ class tests {
       	"disk-usage" => {},
       	"log-parser" => {},
       	"dashboard-view" => {},
+        	"git" => {},
+        	"git-client" => {},
       	 "jquery" => {},
 			"build-pipeline-plugin" => {},
         "performance" => {},
+        "selenium-builder" => {},
         "sonar" => {},
-        "deploy" => {},
+        "deploy" => {}
       }
+    }
+
+    class { 'jmeter':
+    	require => Package["unzip"]
     }
 
 }
