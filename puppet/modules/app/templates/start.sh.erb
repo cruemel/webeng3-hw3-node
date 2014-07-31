@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Variablen
+APP_PATH="/vagrant/thmcards/src"
+
+echo -e "Starting THMCards ..."
+
+cd "$APP_PATH"
+
+if [ -f ./createviews.py ]
+  	then
+		eval "python createviews.py &"
+
+		eval "npm install &"
+
+		eval "node app.js &"
+
+  	else
+    	echo -e "Can not initiate the database."
+fi
+
+

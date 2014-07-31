@@ -28,12 +28,12 @@ class app {
   		require => Nodejs::Install["nodejs-stable"]
 	}
 
-  # file { "/home/vagrant/start.sh":
-  #  owner => "vagrant",
-  #  group => "vagrant",
-  #  content => template("app/start.sh.erb"),
-  #  mode => "744"
-  #}
+  file { "/home/vagrant/start.sh":
+  	owner => "vagrant",
+  	group => "vagrant",
+  	content => template("app/start.sh.erb"),
+  	mode => "744"
+  }
 
   class { "motd":
     template => "app/motd.erb"
