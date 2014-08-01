@@ -8,9 +8,10 @@ class tests {
         "AJP_PORT" => { "value" => "9009" }
       },
       plugin_hash => {
+      	"ansicolor" => {},
       	"disk-usage" => {},
-      	"log-parser" => {},
       	"dashboard-view" => {},
+      	"log-parser" => {},
         	"git" => {},
         	"git-client" => {},
         	"scm-api" => {},
@@ -18,9 +19,9 @@ class tests {
       	 "jquery" => {},
       	  "build-blocker-plugin" => {},
 			"build-pipeline-plugin" => {},
-			"log-parser" => {},
 			"parameterized-trigger" => {},
         "performance" => {},
+        "sauce-ondemand" => {},
         "selenium-builder" => {},
         "sonar" => {},
         "deploy" => {}

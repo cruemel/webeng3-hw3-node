@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://thmcards.cloudcontrolled.com/login"
+      "url": "http://t-cards.cloudcontrolled.com/login"
     },
     {
       "type": "clickElement",
