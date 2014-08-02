@@ -3,13 +3,15 @@ class app {
 	include git
 	include nodejs
 
+	$repo = "https://github.com/cruemel/webeng3-thmcards.git"
+
 	file { "/vagrant/thmcards":
     	ensure => "directory",
   	}
 
 	git::repo { "thmcards":
  		target => "/vagrant/thmcards/src",
-		source => 'https://github.com/cruemel/thmcards-fork.git',
+		source => $repo
 		user => 'vagrant',
 		require => File["/vagrant/thmcards"]
   }
