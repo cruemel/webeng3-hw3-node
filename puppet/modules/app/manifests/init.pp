@@ -11,7 +11,7 @@ class app {
 
 	git::repo { "thmcards":
  		target => "/vagrant/thmcards/src",
-		source => $repo
+		source => $repo,
 		user => 'vagrant',
 		require => File["/vagrant/thmcards"]
   }
