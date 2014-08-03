@@ -14,18 +14,13 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <jdk>(Inherit From Job)</jdk>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.plugins.sonar.SonarRunnerBuilder plugin="sonar@2.1">
-      <project>/etc/puppet/files/sonar/sonar-project.properties</project>
-      <properties></properties>
-      <javaOpts></javaOpts>
-      <jdk>(Inherit From Job)</jdk>
-      <sonarRunnerName>/usr/share/sonar-runner-2.4/bin/sonar-runner</sonarRunnerName>
-      <task></task>
-    </hudson.plugins.sonar.SonarRunnerBuilder>
+    <hudson.tasks.Shell>
+      <command>cd /vagrant/thmcards
+/usr/share/sonar-runner-2.4/bin/sonar-runner</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.tasks.BuildTrigger>
