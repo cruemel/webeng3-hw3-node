@@ -39,6 +39,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	# node
   	config.vm.network "forwarded_port", guest: 3000, host: 3000
+  	# selenium (sauce connect)
+   # config.vm.network "forwarded_port", guest: 4445, host: 8000
    # CouchDB
    config.vm.network "forwarded_port", guest: 5984, host: 5984
    # SonarQube

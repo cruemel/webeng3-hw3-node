@@ -1,0 +1,26 @@
+Gestartet durch Benutzer anonymous
+Baue in Arbeitsbereich /var/lib/jenkins/jobs/thmcards-jmeter/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson7732862149631984355.sh
++ /usr/share/jmeter/bin/jmeter -n -t /etc/puppet/files/jmeter/plans/testplan_03.jmx -l /etc/puppet/files/jmeter/results/result_03.jtl -j /etc/puppet/files/jmeter/logs/jmeter.log
+[warning] /usr/share/jmeter/bin/jmeter: No JAVA_CMD set for run_java, falling back to JAVA_CMD = java
+java.lang.Throwable: Could not access /usr/share/jmeter/lib/junit
+	at org.apache.jmeter.NewDriver.<clinit>(NewDriver.java:97)
+log_file=/etc/puppet/files/jmeter/logs/jmeter.log java.io.FileNotFoundException: /etc/puppet/files/jmeter/logs/jmeter.log (Permission denied)
+[log_file-> System.out]
+2014/08/01 06:55:52 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: Loading user properties from: /usr/share/jmeter/bin/user.properties
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: Loading system properties from: /usr/share/jmeter/bin/system.properties
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: Copyright (c) 1998-2011 The Apache Software Foundation
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: Version 2.5.1
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: java.version=1.7.0_55
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: java.vm.name=OpenJDK Client VM
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: os.name=Linux
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: os.arch=i386
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: os.version=3.2.0-4-686-pae
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: file.encoding=UTF-8
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: Default Locale=English (United States)
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: JMeter  Locale=English (United States)
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: JMeterHome=/usr/share/jmeter
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: user.dir  =/var/lib/jenkins/jobs/thmcards-jmeter/workspace
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: PWD       =/var/lib/jenkins/jobs/thmcards-jmeter/workspace
+2014/08/01 06:55:52 INFO  - jmeter.JMeter: IP: 127.0.1.1 Name: packer-debian-7 FullName: packer-debian-7.6-i386

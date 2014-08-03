@@ -1,0 +1,3 @@
+set JAVA_CMD = ""
+
+/usr/share/jmeter/bin/jmeter -n -t /etc/puppet/files/jmeter/plans/testplan_03.jmx -l /etc/puppet/files/jmeter/results/result_03.jtl -j /etc/puppet/files/jmeter/logs/jmeter.log
