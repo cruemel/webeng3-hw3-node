@@ -1,6 +1,14 @@
 class tests {
 
-	class { "sonarqube": }
+	class { "sonarqube":
+	}
+
+	# package { "maven": ensure => "latest" }
+
+	#sonarqube::plugin { 'sonar-javascript-plugin' :
+   # artifactid => 'sonar-javascript-plugin',
+   # version    => '1.6'
+  #}
 
 	if !defined(Package['unzip']) {
     package {'unzip':
@@ -11,7 +19,7 @@ class tests {
   $runner_version = "2.4"
   $runner_url = "http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist"
   $share_dir = "/usr/share"
-	$runner_home = "${share_dir}/sonar-runner-${runner_version}/bin"
+	$runner_home = "${share_dir}/sonar-runner-${runner_version}"
 
 	wget::fetch { "download-sonar-runner":
     source => "${runner_url}/${runner_version}/sonar-runner-dist-${runner_version}.zip",
